@@ -1,5 +1,5 @@
-import ServiceDetailPage from './ServiceDetailPage';
-import { servicesData } from '../data/services';
+import ServiceDetailPage from "./ServiceDetailPage";
+import { servicesData } from "../data/services";
 
 export default function ScanToBIMPage() {
   const service = servicesData[3];

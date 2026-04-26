@@ -1,7 +1,14 @@
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
-export default function CTABanner({ heading, subheading, primaryText, primaryLink, secondaryText, secondaryLink }) {
+export default function CTABanner({
+  heading,
+  subheading,
+  primaryText,
+  primaryLink,
+  secondaryText,
+  secondaryLink,
+}) {
   return (
     <motion.section
       className="bg-gradient-to-r from-primary to-blue-600 text-white py-16"
@@ -20,7 +27,7 @@ export default function CTABanner({ heading, subheading, primaryText, primaryLin
         >
           {heading}
         </motion.h2>
-        
+
         {subheading && (
           <motion.p
             className="text-xl opacity-90 mb-8"
@@ -41,17 +48,17 @@ export default function CTABanner({ heading, subheading, primaryText, primaryLin
           transition={{ delay: 0.3 }}
         >
           <Link
-            to={primaryLink || '/book-call'}
+            to={primaryLink || "/book-call"}
             className="px-8 py-4 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 inline-block"
           >
-            {primaryText || 'Book a Free Consultation'}
+            {primaryText || "Book a Free Consultation"}
           </Link>
           {secondaryLink && (
             <Link
               to={secondaryLink}
               className="px-8 py-4 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors duration-300 inline-block"
             >
-              {secondaryText || 'Learn More'}
+              {secondaryText || "Learn More"}
             </Link>
           )}
         </motion.div>

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -7,14 +7,18 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Brand Column */}
           <div>
-            <Link to="/" className="flex items-center space-x-2 font-bold text-xl mb-4">
+            <Link
+              to="/"
+              className="flex items-center space-x-2 font-bold text-xl mb-4"
+            >
               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
                 AH
               </div>
               <span>ArchitectHeros</span>
             </Link>
             <p className="text-gray-400 text-sm">
-              Design excellence meets production capacity. Your trusted partner in architecture and MEP engineering.
+              Design excellence meets production capacity. Your trusted partner
+              in architecture and MEP engineering.
             </p>
           </div>
 
@@ -23,22 +27,34 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Services</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
               <li>
-                <Link to="/architecture" className="hover:text-primary transition-colors">
+                <Link
+                  to="/architecture"
+                  className="hover:text-primary transition-colors"
+                >
                   Architectural Design
                 </Link>
               </li>
               <li>
-                <Link to="/mep" className="hover:text-primary transition-colors">
+                <Link
+                  to="/mep"
+                  className="hover:text-primary transition-colors"
+                >
                   MEP Engineering
                 </Link>
               </li>
               <li>
-                <Link to="/scan-to-bim" className="hover:text-primary transition-colors">
+                <Link
+                  to="/scan-to-bim"
+                  className="hover:text-primary transition-colors"
+                >
                   Scan to BIM
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-primary transition-colors">
+                <Link
+                  to="/services"
+                  className="hover:text-primary transition-colors"
+                >
                   BIM Consulting
                 </Link>
               </li>
@@ -50,12 +66,18 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Company</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
               <li>
-                <Link to="/about" className="hover:text-primary transition-colors">
+                <Link
+                  to="/about"
+                  className="hover:text-primary transition-colors"
+                >
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/why-us" className="hover:text-primary transition-colors">
+                <Link
+                  to="/why-us"
+                  className="hover:text-primary transition-colors"
+                >
                   Why Choose Us
                 </Link>
               </li>
@@ -77,12 +99,18 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
               <li>
-                <a href="mailto:info@architectheros.com" className="hover:text-primary transition-colors">
+                <a
+                  href="mailto:info@architectheros.com"
+                  className="hover:text-primary transition-colors"
+                >
                   info@architectheros.com
                 </a>
               </li>
               <li>
-                <a href="tel:+1234567890" className="hover:text-primary transition-colors">
+                <a
+                  href="tel:+1234567890"
+                  className="hover:text-primary transition-colors"
+                >
                   +1 (234) 567-890
                 </a>
               </li>

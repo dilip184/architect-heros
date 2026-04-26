@@ -1,7 +1,13 @@
-import { motion } from 'framer-motion';
-import CTABanner from '../components/CTABanner';
+import { motion } from "framer-motion";
+import CTABanner from "../components/CTABanner";
 
-export default function ServiceDetailPage({ title, description, details, tools, features }) {
+export default function ServiceDetailPage({
+  title,
+  description,
+  details,
+  tools,
+  features,
+}) {
   return (
     <div className="w-full">
       {/* Hero Section */}
@@ -34,8 +40,12 @@ export default function ServiceDetailPage({ title, description, details, tools, 
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6 text-gray-900">About This Service</h2>
-            <p className="text-lg text-gray-600 mb-6 leading-relaxed">{details}</p>
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">
+              About This Service
+            </h2>
+            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+              {details}
+            </p>
             <button className="btn-primary">Request a Quote</button>
           </motion.div>
 
@@ -45,7 +55,9 @@ export default function ServiceDetailPage({ title, description, details, tools, 
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold mb-6 text-gray-900">Key Features</h3>
+            <h3 className="text-2xl font-bold mb-6 text-gray-900">
+              Key Features
+            </h3>
             <ul className="space-y-4">
               {features.map((feature, index) => (
                 <motion.li
@@ -56,8 +68,18 @@ export default function ServiceDetailPage({ title, description, details, tools, 
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <svg className="w-6 h-6 text-primary mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <svg
+                    className="w-6 h-6 text-primary mt-1 mr-3 flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
                   </svg>
                   <span className="text-gray-700">{feature}</span>
                 </motion.li>
@@ -75,9 +97,12 @@ export default function ServiceDetailPage({ title, description, details, tools, 
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Tools & Technologies</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Tools & Technologies
+          </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            We use industry-leading software to ensure precision and efficiency in every project.
+            We use industry-leading software to ensure precision and efficiency
+            in every project.
           </p>
         </motion.div>
 
@@ -110,10 +135,26 @@ export default function ServiceDetailPage({ title, description, details, tools, 
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {[
-            { step: 1, title: 'Discovery', description: 'Understanding your project requirements and goals.' },
-            { step: 2, title: 'Planning', description: 'Creating a detailed project plan and timeline.' },
-            { step: 3, title: 'Execution', description: 'Delivering high-quality work with regular updates.' },
-            { step: 4, title: 'Delivery', description: 'Final review and handoff of completed project.' },
+            {
+              step: 1,
+              title: "Discovery",
+              description: "Understanding your project requirements and goals.",
+            },
+            {
+              step: 2,
+              title: "Planning",
+              description: "Creating a detailed project plan and timeline.",
+            },
+            {
+              step: 3,
+              title: "Execution",
+              description: "Delivering high-quality work with regular updates.",
+            },
+            {
+              step: 4,
+              title: "Delivery",
+              description: "Final review and handoff of completed project.",
+            },
           ].map((item, index) => (
             <motion.div
               key={index}
@@ -127,7 +168,9 @@ export default function ServiceDetailPage({ title, description, details, tools, 
                 <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                   {item.step}
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-gray-900">{item.title}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">
+                  {item.title}
+                </h3>
                 <p className="text-gray-600">{item.description}</p>
               </div>
               {index < 3 && (
@@ -139,7 +182,10 @@ export default function ServiceDetailPage({ title, description, details, tools, 
       </section>
 
       {/* CTA Banner */}
-      <CTABanner heading="Ready to Get Started?" primaryText="Schedule a Consultation" />
+      <CTABanner
+        heading="Ready to Get Started?"
+        primaryText="Schedule a Consultation"
+      />
     </div>
   );
 }

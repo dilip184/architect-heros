@@ -1,5 +1,5 @@
-import ServiceDetailPage from './ServiceDetailPage';
-import { servicesData } from '../data/services';
+import ServiceDetailPage from "./ServiceDetailPage";
+import { servicesData } from "../data/services";
 
 export default function MEPPage() {
   const service = servicesData[2];

@@ -1,13 +1,13 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Layout from './layout/Layout';
-import HomePage from './pages/HomePage';
-import AllServicesPage from './pages/AllServicesPage';
-import ArchitecturePage from './pages/ArchitecturePage';
-import MEPPage from './pages/MEPPage';
-import ScanToBIMPage from './pages/ScanToBIMPage';
-import WhyUsPage from './pages/WhyUsPage';
-import AboutPage from './pages/AboutPage';
-import BookACallPage from './pages/BookACallPage';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./layout/Layout";
+import HomePage from "./pages/HomePage";
+import AllServicesPage from "./pages/AllServicesPage";
+import ArchitecturePage from "./pages/ArchitecturePage";
+import MEPPage from "./pages/MEPPage";
+import ScanToBIMPage from "./pages/ScanToBIMPage";
+import WhyUsPage from "./pages/WhyUsPage";
+import AboutPage from "./pages/AboutPage";
+import BookACallPage from "./pages/BookACallPage";
 
 function App() {
   return (

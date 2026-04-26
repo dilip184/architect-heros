@@ -1,36 +1,76 @@
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import ServiceCard from '../components/ServiceCard';
-import FeatureCard from '../components/FeatureCard';
-import TestimonialsCarousel from '../components/TestimonialsCarousel';
-import StatsBar from '../components/StatsBar';
-import CTABanner from '../components/CTABanner';
-import TrustLogos from '../components/TrustLogos';
-import { whyUsPoints } from '../data/services';
-import { testimonialsData, statsData, trustLogos } from '../data/testimonials';
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import ServiceCard from "../components/ServiceCard";
+import FeatureCard from "../components/FeatureCard";
+import TestimonialsCarousel from "../components/TestimonialsCarousel";
+import StatsBar from "../components/StatsBar";
+import CTABanner from "../components/CTABanner";
+import TrustLogos from "../components/TrustLogos";
+import { whyUsPoints } from "../data/services";
+import { testimonialsData, statsData, trustLogos } from "../data/testimonials";
 
 // Icon components (simple SVG icons)
 const ArchitectureIcon = () => (
-  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+  <svg
+    className="w-8 h-8"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+    />
   </svg>
 );
 
 const BIMIcon = () => (
-  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+  <svg
+    className="w-8 h-8"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+    />
   </svg>
 );
 
 const MEPIcon = () => (
-  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+  <svg
+    className="w-8 h-8"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+    />
   </svg>
 );
 
 const ScanIcon = () => (
-  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+  <svg
+    className="w-8 h-8"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+    />
   </svg>
 );
 
@@ -78,7 +118,8 @@ export default function HomePage() {
               className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto"
               variants={itemVariants}
             >
-              From concept to construction documents, we deliver comprehensive design and engineering solutions for modern buildings.
+              From concept to construction documents, we deliver comprehensive
+              design and engineering solutions for modern buildings.
             </motion.p>
 
             <motion.div
@@ -109,9 +150,12 @@ export default function HomePage() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Partner With Us</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Why Partner With Us
+          </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            We combine design excellence with production capacity to deliver exceptional results on time and within budget.
+            We combine design excellence with production capacity to deliver
+            exceptional results on time and within budget.
           </p>
         </motion.div>
 
@@ -124,7 +168,11 @@ export default function HomePage() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <FeatureCard number={index + 1} title={point.title} description={point.description} />
+              <FeatureCard
+                number={index + 1}
+                title={point.title}
+                description={point.description}
+              />
             </motion.div>
           ))}
         </div>
@@ -138,9 +186,12 @@ export default function HomePage() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Our Services
+          </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Comprehensive architecture and engineering solutions tailored to your project needs.
+            Comprehensive architecture and engineering solutions tailored to
+            your project needs.
           </p>
         </motion.div>
 
@@ -180,9 +231,12 @@ export default function HomePage() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            What Our Clients Say
+          </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Real feedback from architects, engineers, and project managers who trust us.
+            Real feedback from architects, engineers, and project managers who
+            trust us.
           </p>
         </motion.div>
 
@@ -195,7 +249,10 @@ export default function HomePage() {
       <TrustLogos logos={trustLogos} />
 
       {/* CTA Banner */}
-      <CTABanner heading="Ready to Transform Your Project?" subheading="Let's discuss how we can help bring your vision to life." />
+      <CTABanner
+        heading="Ready to Transform Your Project?"
+        subheading="Let's discuss how we can help bring your vision to life."
+      />
     </div>
   );
 }

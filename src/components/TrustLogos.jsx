@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 export default function TrustLogos({ logos }) {
   const containerVariants = {
@@ -35,7 +35,11 @@ export default function TrustLogos({ logos }) {
               className="h-16 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
               variants={itemVariants}
             >
-              <img src={logo.src} alt={logo.name} className="max-h-full max-w-full object-contain" />
+              <img
+                src={logo.src}
+                alt={logo.name}
+                className="max-h-full max-w-full object-contain"
+              />
             </motion.div>
           ))}
         </div>

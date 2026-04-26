@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import TestimonialCard from './TestimonialCard';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import TestimonialCard from "./TestimonialCard";
 
 export default function TestimonialsCarousel({ testimonials }) {
   const [current, setCurrent] = useState(0);
@@ -32,7 +32,10 @@ export default function TestimonialsCarousel({ testimonials }) {
 
   const paginate = (newDirection) => {
     setDirection(newDirection);
-    setCurrent((prev) => (prev + newDirection + testimonials.length) % testimonials.length);
+    setCurrent(
+      (prev) =>
+        (prev + newDirection + testimonials.length) % testimonials.length,
+    );
   };
 
   return (
@@ -46,7 +49,10 @@ export default function TestimonialsCarousel({ testimonials }) {
             initial="enter"
             animate="center"
             exit="exit"
-            transition={{ x: { type: 'spring', stiffness: 300, damping: 30 }, opacity: { duration: 0.2 } }}
+            transition={{
+              x: { type: "spring", stiffness: 300, damping: 30 },
+              opacity: { duration: 0.2 },
+            }}
             className="absolute w-full h-full"
           >
             <TestimonialCard {...testimonials[current]} />
@@ -59,16 +65,36 @@ export default function TestimonialsCarousel({ testimonials }) {
         onClick={() => paginate(-1)}
         className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-40 p-2 rounded-full bg-primary text-white hover:bg-blue-700 transition-colors"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M15 19l-7-7 7-7"
+          />
         </svg>
       </button>
       <button
         onClick={() => paginate(1)}
         className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-40 p-2 rounded-full bg-primary text-white hover:bg-blue-700 transition-colors"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9 5l7 7-7 7"
+          />
         </svg>
       </button>
 
@@ -82,7 +108,7 @@ export default function TestimonialsCarousel({ testimonials }) {
               setCurrent(index);
             }}
             className={`h-2 rounded-full transition-all duration-300 ${
-              index === current ? 'bg-primary w-8' : 'bg-gray-300 w-2'
+              index === current ? "bg-primary w-8" : "bg-gray-300 w-2"
             }`}
           />
         ))}

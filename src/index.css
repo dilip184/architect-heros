@@ -6,23 +6,23 @@
   body {
     @apply bg-white text-gray-900;
   }
-  
+
   h1 {
     @apply text-4xl font-bold;
   }
-  
+
   h2 {
     @apply text-3xl font-bold;
   }
-  
+
   h3 {
     @apply text-2xl font-semibold;
   }
-  
+
   h4 {
     @apply text-xl font-semibold;
   }
-  
+
   p {
     @apply text-gray-600 leading-relaxed;
   }
@@ -32,15 +32,15 @@
   .btn-primary {
     @apply px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300;
   }
-  
+
   .btn-secondary {
     @apply px-6 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-300;
   }
-  
+
   .card {
     @apply bg-white rounded-lg shadow-card p-6 hover:shadow-hover transition-shadow duration-300;
   }
-  
+
   .section-container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16;
   }

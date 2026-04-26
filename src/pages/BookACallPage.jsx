@@ -1,16 +1,16 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function BookACallPage() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    projectType: 'architecture',
-    projectDetails: '',
-    preferredDate: '',
-    preferredTime: 'morning',
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    projectType: "architecture",
+    projectDetails: "",
+    preferredDate: "",
+    preferredTime: "morning",
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -26,19 +26,19 @@ export default function BookACallPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Here you would typically send the form data to a server
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
       setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        projectType: 'architecture',
-        projectDetails: '',
-        preferredDate: '',
-        preferredTime: 'morning',
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        projectType: "architecture",
+        projectDetails: "",
+        preferredDate: "",
+        preferredTime: "morning",
       });
     }, 3000);
   };
@@ -73,19 +73,22 @@ export default function BookACallPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {[
               {
-                icon: '📞',
-                title: 'Phone Consultation',
-                description: 'Discuss your project requirements and timeline over the phone.',
+                icon: "📞",
+                title: "Phone Consultation",
+                description:
+                  "Discuss your project requirements and timeline over the phone.",
               },
               {
-                icon: '📹',
-                title: 'Video Call',
-                description: 'Face-to-face meeting via video conference for better collaboration.',
+                icon: "📹",
+                title: "Video Call",
+                description:
+                  "Face-to-face meeting via video conference for better collaboration.",
               },
               {
-                icon: '⏰',
-                title: 'Flexible Scheduling',
-                description: 'Choose a time that works best for you. We accommodate various time zones.',
+                icon: "⏰",
+                title: "Flexible Scheduling",
+                description:
+                  "Choose a time that works best for you. We accommodate various time zones.",
               },
             ].map((option, index) => (
               <motion.div
@@ -97,7 +100,9 @@ export default function BookACallPage() {
                 transition={{ delay: index * 0.1 }}
               >
                 <div className="text-4xl mb-4">{option.icon}</div>
-                <h3 className="text-lg font-semibold mb-2 text-gray-900">{option.title}</h3>
+                <h3 className="text-lg font-semibold mb-2 text-gray-900">
+                  {option.title}
+                </h3>
                 <p className="text-gray-600 text-sm">{option.description}</p>
               </motion.div>
             ))}
@@ -248,7 +253,8 @@ export default function BookACallPage() {
                 </motion.button>
 
                 <p className="text-sm text-gray-600 text-center">
-                  * Required fields. We'll contact you to confirm your appointment.
+                  * Required fields. We'll contact you to confirm your
+                  appointment.
                 </p>
               </form>
             ) : (
@@ -258,13 +264,26 @@ export default function BookACallPage() {
                 animate={{ opacity: 1, scale: 1 }}
               >
                 <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  <svg
+                    className="w-10 h-10 text-green-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  Thank You!
+                </h3>
                 <p className="text-gray-600 mb-4">
-                  Your consultation request has been received. Our team will contact you shortly to confirm your appointment.
+                  Your consultation request has been received. Our team will
+                  contact you shortly to confirm your appointment.
                 </p>
                 <p className="text-sm text-gray-500">
                   Check your email for confirmation details.
@@ -283,26 +302,32 @@ export default function BookACallPage() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Frequently Asked Questions
+          </h2>
         </motion.div>
 
         <div className="max-w-3xl mx-auto space-y-4">
           {[
             {
-              question: 'How long is the consultation?',
-              answer: 'The initial consultation is 30 minutes. We can extend it if needed after discussing your project.',
+              question: "How long is the consultation?",
+              answer:
+                "The initial consultation is 30 minutes. We can extend it if needed after discussing your project.",
             },
             {
-              question: 'Is the consultation free?',
-              answer: 'Yes, the first consultation is completely free with no obligation.',
+              question: "Is the consultation free?",
+              answer:
+                "Yes, the first consultation is completely free with no obligation.",
             },
             {
-              question: 'What should I prepare for the call?',
-              answer: 'Have your project details, budget, timeline, and any reference images ready. We\'ll do most of the talking!',
+              question: "What should I prepare for the call?",
+              answer:
+                "Have your project details, budget, timeline, and any reference images ready. We'll do most of the talking!",
             },
             {
-              question: 'How quickly can you start work?',
-              answer: 'After the consultation, we prepare a proposal within 2-3 business days. Once approved, we can typically start immediately.',
+              question: "How quickly can you start work?",
+              answer:
+                "After the consultation, we prepare a proposal within 2-3 business days. Once approved, we can typically start immediately.",
             },
           ].map((faq, index) => (
             <motion.div
@@ -313,7 +338,9 @@ export default function BookACallPage() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
             >
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{faq.question}</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                {faq.question}
+              </h3>
               <p className="text-gray-600">{faq.answer}</p>
             </motion.div>
           ))}
